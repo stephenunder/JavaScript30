@@ -62,13 +62,12 @@ function toggleFullscreen() {
   }
 }
 
-function keyNav(e) {
-	console.log(e.code);
-	if(e.code === "Space") {
+function keyNav(event) {
+	if(event.code === "Space") {
 		togglePlay();
-	} else if (e.code === "ArrowRight") {
+	} else if (event.code === "ArrowRight") {
 		video.currentTime += 25;
-	} else if (e.code === "ArrowLeft") {
+	} else if (event.code === "ArrowLeft") {
 		video.currentTime -= 10;
 	}
 }
