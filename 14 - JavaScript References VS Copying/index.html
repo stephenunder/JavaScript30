@@ -8,16 +8,16 @@
 
   <script>
     // start with strings, numbers and booleans
-    // let age = 100;
-    // let age2 = age;
+    let age = 100;
+    let age2 = age;
     // console.log(age, age2);
-    // age = 200;
+    age = 200;
     // console.log(age, age2);
 
-    // let name = 'Wes';
-    // let name2 = name;
+    let name = "Stephen";
+    let name2 = name;
     // console.log(name, name2);
-    // name = 'wesley';
+    name = "Steve";
     // console.log(name, name2);
 
     // Let's say we have an array
@@ -25,10 +25,9 @@
 
     // and we want to make a copy of it.
     const team = players;
-
     console.log(players, team);
     // You might think we can just do something like this:
-    // team[3] = 'Lux';
+    // team[3] = "Lux";
 
     // however what happens when we update that array?
 
@@ -40,7 +39,6 @@
 
     // So, how do we fix this? We take a copy instead!
     const team2 = players.slice();
-
     // one way
 
     // or create a new array and concat the old one in
@@ -48,7 +46,7 @@
 
     // or use the new ES6 Spread
     const team4 = [...players];
-    team4[3] = 'heeee hawww';
+    team4[3] = "hee haw";
     console.log(team4);
 
     const team5 = Array.from(players);
@@ -65,33 +63,31 @@
 
     // and think we make a copy:
     // const captain = person;
-    // captain.number = 99;
+    // captain.age = 99;
 
     // how do we take a copy instead?
-    const cap2 = Object.assign({}, person, { number: 99, age: 12 });
-    console.log(cap2);
+    const captain2 = Object.assign({}, person, { age: 99 });
 
     // We will hopefully soon see the object ...spread
-    // const cap3 = {...person};
+    // const captain3 = {...person};
 
     // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
 
-    const wes = {
-      name: 'Wes',
+    const stephen = {
+      name: "Stephen",
       age: 100,
       social: {
-        twitter: '@wesbos',
-        facebook: 'wesbos.developer'
+        twitter: "@stephenunder",
+        linkedin: "stephenunder"
       }
-    };
+    }
+    console.clear()
+    console.log(stephen);
 
-    console.clear();
-    console.log(wes);
+    const dev = Object.assign({}, stephen);
 
-    const dev = Object.assign({}, wes);
-
-    const dev2 = JSON.parse(JSON.stringify(wes));
-
+    // not recommended but "poor man" deep clones
+    const dev2 = JSON.parse(JSON.stringify(stephen));
 
   </script>
 
