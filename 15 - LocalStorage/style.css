@@ -11,7 +11,7 @@ html {
 }
 
 *, *:before, *:after {
-  box-sizing: inherit; 
+  box-sizing: inherit;
 }
 
 svg {
@@ -66,6 +66,10 @@ h2 {
 
 .plates input:checked + label:before {
   content: '🌮';
+}
+
+input[type=submit] {
+  cursor: pointer;
 }
 
 .add-items {
