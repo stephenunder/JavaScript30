@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Geolocation</title>
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
@@ -11,7 +11,7 @@
 
   <h1 class="speed">
     <span class="speed-value">0</span>
-    <span class="units">KM/H</span>
+    <span class="units">MPH</span>
   </h1>
 
   <style>
@@ -55,10 +55,21 @@
 
     .units {
       font-size: 15px;
+      margin-left: 5px;
     }
-    /*Compass: https://thenounproject.com/search/?q=compass&i=592352*/
+    /* Compass: https://thenounproject.com/icon/592352/ */
   </style>
   <script>
+    const arrow = document.querySelector(".arrow");
+    const speed = document.querySelector(".speed-value");
+
+    navigator.geolocation.watchPosition((data) => {
+      speed.textContent = (data.coords.speed / 1.609);
+      arrow.style.transform = `rotate(${data.coords.heading}deg)`;
+    }, (err) => {
+      console.err(err);
+      alert("Hey! You have to allow location for the app to work.");
+    });
   </script>
 </body>
 </html>
