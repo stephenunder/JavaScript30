@@ -21,6 +21,17 @@ h1 {
   margin-bottom: 0;
 }
 
+#start {
+  background: #0d47a1;
+  border: none;
+  color: white;
+  display: flex;
+  font-family: 'Amatic SC', cursive;
+  font-size: 3rem;
+  margin: 50px auto;
+  padding: 10px;
+}
+
 .score {
   background: rgba(255,255,255,0.2);
   padding: 0 3rem;
